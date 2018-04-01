@@ -1,7 +1,7 @@
 
 ;;========================================================================
 ;;
-;;      EmacsSettings.el
+;;      ColorSettings.el
 ;;
 ;;      Copyright (C) 2006-2014, Takahiro Itou.
 ;;      All Rights Reserved.
