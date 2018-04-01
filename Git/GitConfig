@@ -1,0 +1,12 @@
+
+[color]
+    ui   =  true
+
+[alias]
+    st   =  status
+    ci   =  commit
+    co   =  checkout
+    gl   =  log  --graph  --oneline
+    gll  =  log  --graph  --oneline  --decorate
+    glv  =  log  --graph             --decorate
+
