@@ -1,0 +1,12 @@
+
+set  nocompatible
+set  number
+set  numberwidth=4
+set  tabstop=4
+set  nowrap
+set  laststatus=2
+set  wildmenu
+set  ignorecase
+set  ruler
+set  smartcase
+
