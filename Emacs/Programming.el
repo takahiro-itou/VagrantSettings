@@ -15,3 +15,10 @@
 ;;====================================================================;;
 
 (load  "CxxMode.el")
+
+(add-to-list
+ 'auto-mode-alist
+ '("\\(\\.cpp\\|\\.inl\\|\\.cpp\\.in\\)\\'" . c++-mode))
+(add-to-list
+ 'auto-mode-alist
+ '("\\(\\.h\\|\\.h\\.in\\)\\'" . c++-mode))

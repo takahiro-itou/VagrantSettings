@@ -38,4 +38,19 @@
   (mydbgs-define-gdb-key-vc6)
   )
 
-(add-hook  'gdb-mode-hook  'mydbgs-define-gdb-key)
+;;====================================================================;;
+;;                                                                    ;;
+;;                                                                    ;;
+;;====================================================================;;
+
+(defun  mydbgs-setup-gdb-mode ()
+  (mydbgs-define-gdb-key)
+)
+
+(defun  mydbgs-setup-pdb-mode ()
+  (mydbgs-define-gdb-key)
+
+)
+
+(add-hook  'gdb-mode-hook   'mydbgs-setup-gdb-mode)
+(add-hook  'pdb-mode-hook   'mydbgs-setup-pdb-mode)
