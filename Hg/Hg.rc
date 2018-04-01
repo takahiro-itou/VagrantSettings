@@ -1,23 +1,5 @@
 
-[extensions]
-color       =
-graphlog    =
-histedit    =
-mq          =
-rebase      =
-record      =
-strip       =
-transplant  =
-
-
-[alias]
-chg         = diff -c
-chgtip      = diff -c tip
-dr          = diff -r
-gla         = glog
-gll         = glog --limit
-glv         = glog -v --limit
-glva        = glog -v
-glvr        = glog -v -r
-he          = histedit
+%include  ~/Settings/Hg/Extension
+%include  ~/Settings/Hg/Alias
+%include  ~/Settings/Hg/CommitLogs
 
