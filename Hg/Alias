@@ -1,0 +1,22 @@
+
+[alias]
+slog        = log --template '{rev}:{node|short} {desc|firstline}\n'
+chg         = diff -c
+chgtip      = diff -c tip
+dr          = diff -r
+gla         = glog
+gll         = glog --limit
+glv         = glog -v --limit
+glva        = glog -v
+glvr        = glog -v -r
+gls         = glog --template 'changeset: {rev}:{node|short}  {branch}  {tags}\nsummary:{desc|firstline}\n\n'
+he          = histedit
+
+cia         = ci --amend
+cinew       = ci -m 'temp:work-block-new'
+ciend       = ci -m 'temp:work-block-fin'
+cifold      = ci -m 'fold'
+ciref       = ci -m 'リファクタリング'
+cirdel      = ci -m '不要になったコードを削除'
+cimdef      = ci -m 'デフォルトブランチをマージ'
+
