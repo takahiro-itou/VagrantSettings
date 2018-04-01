@@ -1,0 +1,3 @@
+
+caption always "%{= wb} %-w%{=bu dr}%50>%n %t%{-}%+w%65< %= %{=b wk} %{=b wb} %y/%m/%d %{=b wm}%c"
+

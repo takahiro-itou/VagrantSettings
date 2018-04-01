@@ -3,3 +3,7 @@ source  ~/Settings/Screen/Terminal.rc
 source  ~/Settings/Screen/KeyBind.rc
 source  ~/Settings/Screen/Caption.rc
 
+autodetach       on
+defscrollback    10000
+startup_message  off
+

@@ -1,0 +1,9 @@
+
+escape    ^A^A
+bind  n   screen
+bind  h   prev
+bind  j   next
+bind  l   windowlist
+bind  w   windows
+bind  ^w  select
+
