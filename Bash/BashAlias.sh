@@ -12,7 +12,7 @@ if [ -f ~/Settings/Bash/AliasBasic.sh ] ; then
   source  ~/Settings/Bash/AliasBasic.sh
 fi
 
-if [ "x${MYBASH_ECHO_LOADING_BASHRC}y" = "xTRUEy" ] ; then
+if [ "x${MYBASH_ECHO_LOADING_BASHRC_DETAIL}y" = "xTRUEy" ] ; then
   echo  "Loading  ${HOME}/Settings/Bash/BashAlias.sh : OK"  1>&2
 fi
 
