@@ -1,4 +1,5 @@
 
 %include  ~/Settings/Hg/Extension
 %include  ~/Settings/Hg/Alias
+%include  ~/Settings/Hg/CommitLogs
 
