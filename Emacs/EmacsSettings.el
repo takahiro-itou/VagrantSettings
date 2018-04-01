@@ -14,8 +14,23 @@
 ;;                                                                    ;;
 ;;====================================================================;;
 
+(defvar  myes-load-color-settings     t)
+(defvar  myes-load-debugger-settings  t)
+(defvar  myes-load-japanese-settings  t)
+(defvar  myes-load-key-bind-settings  t)
+(defvar  myes-load-programming        t)
+(defvar  myes-load-window-settings    t)
+
 (defvar  mycs-settings-background-light  t)
 (defvar  mycs-settings-face-enable-bold  t)
+
+;;====================================================================;;
+;;                                                                    ;;
+;;    Overwrite Default Values (For Local Settings).                  ;;
+;;                                                                    ;;
+;;====================================================================;;
+
+(load  "~/LocalSettings/Emacs/EmacsLocal"  t)
 
 ;;====================================================================;;
 ;;                                                                    ;;
@@ -45,7 +60,9 @@
 ;;                                                                    ;;
 ;;====================================================================;;
 
-(load  "ColorSettings.el")
+(if (and  (boundp  'myes-load-color-settings)
+          myes-load-color-settings)
+    (load  "ColorSettings"))
 
 ;;====================================================================;;
 ;;                                                                    ;;
@@ -53,7 +70,9 @@
 ;;                                                                    ;;
 ;;====================================================================;;
 
-(load  "KeyBind.el")
+(if (and  (boundp  'myes-load-key-bind-settings)
+          myes-load-key-bind-settings)
+    (load  "KeyBind"))
 
 ;;====================================================================;;
 ;;                                                                    ;;
@@ -61,7 +80,9 @@
 ;;                                                                    ;;
 ;;====================================================================;;
 
-(load  "JapaneseSettings.el")
+(if (and  (boundp  'myes-load-japanese-settings)
+          myes-load-japanese-settings)
+    (load  "JapaneseSettings"))
 
 ;;====================================================================;;
 ;;                                                                    ;;
@@ -70,7 +91,9 @@
 ;;                                                                    ;;
 ;;====================================================================;;
 
-(load  "WindowSettings.el")
+(if (and  (boundp  'myes-load-window-settings)
+          myes-load-window-settings)
+    (load  "WindowSettings"))
 
 ;;====================================================================;;
 ;;                                                                    ;;
@@ -79,5 +102,10 @@
 ;;                                                                    ;;
 ;;====================================================================;;
 
-(load  "Programming.el")
-(load  "DebuggerSettings.el")
+(if (and  (boundp  'myes-load-programming)
+          myes-load-programming)
+    (load  "Programming"))
+
+(if (and  (boundp  'myes-load-debugger-settings)
+          myes-load-debugger-settings)
+    (load  "DebuggerSettings"))

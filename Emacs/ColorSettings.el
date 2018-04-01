@@ -112,7 +112,7 @@
 ;;                                                                    ;;
 ;;====================================================================;;
 
-(if mycs-settings-background-light
+(if  mycs-settings-background-light
     (mycs-setup-color-background-light)
     (mycs-setup-color-background-dark)
-    )
+)

@@ -147,6 +147,7 @@
   (c-set-offset  'arglist-intro          'mycxx-offs-arglist-intro)
   (c-set-offset  'c                      0)
   (c-set-offset  'cpp-macro-cont         '++)
+  (c-set-offset  'inline-open            0)
   (c-set-offset  'innamespace            0)
   (c-set-offset  'statement              'mycxx-offs-statement)
   (c-set-offset  'statement-cont         'mycxx-offs-statement-cont)
