@@ -9,17 +9,11 @@ for  file  in  /etc/bashrc  ; do
   fi
 done
 
-if [ -f ~/Settings/Bash/SetEnvs.sh ] ; then
-  source  ~/Settings/Bash/SetEnvs.sh
-fi
-
-if [ -f ~/Settings/Bash/Prompt.sh ] ; then
-  source  ~/Settings/Bash/Prompt.sh
-fi
-
-if [ -f ~/Settings/Bash/BashAlias.sh ] ; then
-  source  ~/Settings/Bash/BashAlias.sh
-fi
+for  file  in  SetEnvs.sh  Prompt.sh  BashAlias.sh  ; do
+  if [ -f ~/Settings/Bash/${file} ] ; then
+    source  ~/Settings/Bash/${file}
+  fi
+done
 
 if [ -f ~/LocalSettings/Bash/BashrcLocal ] ; then
   source  ~/LocalSettings/Bash/BashrcLocal
