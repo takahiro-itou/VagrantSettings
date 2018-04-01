@@ -20,3 +20,7 @@ ciref       = ci -m 'リファクタリング'
 cirdel      = ci -m '不要になったコードを削除'
 cimdef      = ci -m 'デフォルトブランチをマージ'
 
+brn         = branch
+brs         = branches
+brc         = branches -c
+
