@@ -13,4 +13,5 @@ set  wildmenu
 set  nowrap
 
 source  ~/Settings/Vim/VimDiff
+source  ~/Settings/Vim/BinaryEditor
 
