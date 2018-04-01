@@ -15,5 +15,7 @@ alias  ls='ls --color=tty'
 alias  rm='rm -i'
 alias  view='vim -R '
 
-##echo  "Load  ${HOME}/Settings/Bash/AliasBasic.sh : OK"  1>&2
+if [ "x${MYBASH_ECHO_LOADING_BASHRC}y" = "xTRUEy" ] ; then
+  echo  "Loading  ${HOME}/Settings/Bash/AliasBasic.sh : OK"  1>&2
+fi
 
