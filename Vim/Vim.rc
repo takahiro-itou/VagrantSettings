@@ -1,12 +1,18 @@
 
 set  nocompatible
-set  number
-set  numberwidth=4
-set  tabstop=4
-set  nowrap
-set  laststatus=2
-set  wildmenu
+set  backspace=indent,eol,start
+
+set  hlsearch
 set  ignorecase
+set  laststatus=2
+set  number
+set  numberwidth=5
 set  ruler
 set  smartcase
+set  tabstop=4
+set  wildmenu
+set  nowrap
+
+source  ~/Settings/Vim/VimDiff
+source  ~/Settings/Vim/BinaryEditor
 
