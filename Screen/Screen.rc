@@ -1,0 +1,5 @@
+
+source  ~/Settings/Screen/Terminal.rc
+source  ~/Settings/Screen/KeyBind.rc
+source  ~/Settings/Screen/Caption.rc
+
