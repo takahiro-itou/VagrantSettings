@@ -4,7 +4,7 @@ hi  DiffChange  ctermfg=black  ctermbg=3
 hi  DiffDelete  ctermfg=black  ctermbg=6
 hi  DiffText    ctermfg=black  ctermbg=7
 
-map  dl  :diffg 2<CR>:diffupdate<CR>
-map  dr  :diffg 3<CR>:diffupdate<CR>
-map  dp  :diffp 1<CR>:diffupdate<CR>
+map  dgl  :diffg 2<CR>:diffupdate<CR>
+map  dgr  :diffg 3<CR>:diffupdate<CR>
+map  dp   :diffp 1<CR>:diffupdate<CR>
 
