@@ -12,3 +12,5 @@ set  tabstop=4
 set  wildmenu
 set  nowrap
 
+source  ~/Settings/Vim/VimDiff
+
