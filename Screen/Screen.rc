@@ -1,0 +1,9 @@
+
+source  ${HOME}/Settings/Screen/Terminal.rc
+source  ${HOME}/Settings/Screen/KeyBind.rc
+source  ${HOME}/Settings/Screen/Caption.rc
+
+autodetach       on
+defscrollback    10000
+startup_message  off
+
