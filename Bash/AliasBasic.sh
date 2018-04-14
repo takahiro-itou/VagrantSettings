@@ -9,6 +9,7 @@
 ##
 
 alias  g='git '
+alias  gbr='git  branch '
 alias  gci='git  commit '
 alias  gco='git  checkout '
 alias  gd='git  diff '
