@@ -53,7 +53,7 @@
 ;;
 (defun  mycxx-ofsfn-arglist-intro (cs relpos curcol)
   (cond
-   ((re-search-forward "=[ \\t]*[^ \\t]+(" (c-point 'eol) t)
+   ((re-search-forward "=[ \\t]*[^ ]+(" (c-point 'eol) t)
     (mycxx-offs-calc-floor-indent (match-beginning 0) curcol 2))
    (t (* c-basic-offset 2))
 ))
@@ -92,7 +92,7 @@
 ;;
 (defun  mycxx-ofsfn-statement-cont (cs relpos curcol)
   (cond
-   ((re-search-forward "=[ \\t]*[^ \\t]+(" (c-point 'eol) t)
+   ((re-search-forward "=[ \\t]*[^ ]+(" (c-point 'eol) t)
     (mycxx-offs-calc-floor-indent (match-beginning 0) curcol 2))
    ((re-search-forward "const[ \\t]" (c-point 'eol) t)
     (mycxx-offs-calc-floor-indent (match-beginning 0) curcol 1))
@@ -161,6 +161,7 @@
 
 (defun  mycxx-cplusplus-mode-setup ()
   (setq  tab-width  4)
+  (setq  electric-indent-mode  nil)
   (mycxx-setup-offset-settings)
 )
 

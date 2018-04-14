@@ -44,12 +44,23 @@
 ;;====================================================================;;
 
 (defun  mydbgs-setup-gdb-mode ()
+  (gud-def  gud-break-main  "break main"  ""
+            "Set breakpoint at main.")
+  (gud-def  gud-run         "run"         ""
+            "Run.")
+  (gud-def  gud-display     "display %e"  ""
+            "display C expression at point.")
   (mydbgs-define-gdb-key)
+  (gud-break-main  nil)
+  (gud-run  nil)
 )
 
 (defun  mydbgs-setup-pdb-mode ()
+  (gud-def  gud-display     "display %e"  ""
+            "display C expression at point.")
   (mydbgs-define-gdb-key)
-
+  (gud-break-main  nil)
+  (gud-run  nil)
 )
 
 (add-hook  'gdb-mode-hook   'mydbgs-setup-gdb-mode)

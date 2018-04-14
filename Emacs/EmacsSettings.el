@@ -43,16 +43,20 @@
   '(c-syntactic-indentation   t)
   '(c-tab-always-indent       nil)
   '(column-number-mode        t)
+  '(electric-indent-mode      nil)
   '(fill-column               80)
   '(global-font-lock-mode t   nil  (font-lock))
   '(indent-tabs-mode          nil)
   '(line-number-mode          t)
+  '(make-backup-files         nil)
   '(paren-mode                (quote  blink-paren)  nil  (paren))
   '(show-paren-mode           t nil (paren))
   '(show-trailing-whitespace  t)
   '(tab-width                 4)
   '(truncate-lines            nil)
   )
+
+(setq  make-backup-files  nil)
 
 ;;====================================================================;;
 ;;                                                                    ;;
