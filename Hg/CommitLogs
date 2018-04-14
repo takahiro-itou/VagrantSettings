@@ -1,10 +1,21 @@
 
 [alias]
 
+mkbdevelop  = ci -m '開発用ブランチを作成'
 mkbtopic    = ci -e -m "ブランチを作成 -- Topic # 0000\n(1) 説明"
 mkbrefact   = ci -e -m "ブランチを作成 -- Refactoring # 0000\n(1) 説明"
-clmtopic    = ci -e -m 'ブランチ Topic # 0000 をマージ'
-clmrefact   = ci -e -m 'ブランチ Refactoring # 0000 をマージ'
-clbtopic    = ci -e -m 'ブランチ Topic # 0000 を閉鎖'
-clbrefact   = ci -e -m 'ブランチ Refactoring # 0000 を閉鎖'
+
+cinew       = ci -m 'temp:work-block-new'
+ciend       = ci -m 'temp:work-block-fin'
+cifold      = ci -m 'fold'
+ciref       = ci -m 'リファクタリング'
+cirdel      = ci -m '不要になったコードを削除'
+
+cimdefault  = ci -m 'デフォルトブランチをマージ'
+cimdevelop  = ci -m '開発用ブランチをマージ'
+cimtopic    = ci -e -m 'ブランチ Topic # 0000 をマージ'
+cimrefact   = ci -e -m 'ブランチ Refactoring # 0000 をマージ'
+
+cicbtopic   = ci -e -m 'ブランチ Topic # 0000 を閉鎖'
+cicbrefact  = ci -e -m 'ブランチ Refactoring # 0000 を閉鎖'
 
