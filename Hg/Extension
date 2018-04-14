@@ -9,3 +9,6 @@ record      =
 strip       =
 transplant  =
 
+[bookmarks]
+track.current  =  True
+
