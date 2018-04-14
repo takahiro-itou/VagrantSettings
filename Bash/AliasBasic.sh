@@ -8,6 +8,17 @@
 ##  All Rights Reserved.
 ##
 
+alias  g='git '
+alias  gbr='git  branch '
+alias  gci='git  commit '
+alias  gco='git  checkout '
+alias  gd='git  diff '
+alias  gdc='git  diff  --cached '
+alias  ggl='git  gll '
+alias  ggll='git  gll '
+alias  gglv='git  glv '
+alias  gst='git  status '
+
 alias  ll='ls -l --color=tty'
 alias  la='ls -a --color=tty'
 alias  ls='ls --color=tty'
