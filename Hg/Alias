@@ -18,7 +18,8 @@ ciend       = ci -m 'temp:work-block-fin'
 cifold      = ci -m 'fold'
 ciref       = ci -m 'リファクタリング'
 cirdel      = ci -m '不要になったコードを削除'
-cimdef      = ci -m 'デフォルトブランチをマージ'
+cimdefault  = ci -m 'デフォルトブランチをマージ'
+cimdevlop   = ci -m '開発用ブランチをマージ'
 
 brn         = branch
 brs         = branches
