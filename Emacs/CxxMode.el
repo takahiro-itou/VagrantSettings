@@ -161,6 +161,7 @@
 
 (defun  mycxx-cplusplus-mode-setup ()
   (setq  tab-width  4)
+  (setq  electric-indent-mode  nil)
   (mycxx-setup-offset-settings)
 )
 
