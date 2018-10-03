@@ -1,12 +1,16 @@
 
+[include]
+    path  =  ~/Settings/Git/Core
+
 [color]
-    ui   =  true
+    ui    =  true
 
 [alias]
-    st   =  status
-    ci   =  commit
-    co   =  checkout
-    gl   =  log  --graph  --oneline
-    gll  =  log  --graph  --oneline  --decorate
-    glv  =  log  --graph             --decorate
+    br    =  branch
+    st    =  status
+    ci    =  commit
+    co    =  checkout
+    gl    =  log  --graph  --oneline
+    gll   =  log  --graph  --oneline  --decorate
+    glv   =  log  --graph             --decorate
 
