@@ -113,3 +113,6 @@
 (if (and  (boundp  'myes-load-debugger-settings)
           myes-load-debugger-settings)
     (load  "DebuggerSettings"))
+
+(setq  vc-handled-backends nil)
+
