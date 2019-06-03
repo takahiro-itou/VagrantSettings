@@ -8,6 +8,8 @@
 ;;                                                                        ;;
 ;;========================================================================;;
 
+(require  'whitespace)
+
 ;;====================================================================;;
 ;;                                                                    ;;
 ;;    Back Ground is Light Color.                                     ;;
@@ -98,13 +100,23 @@
       (mycs-setup-color-bglight-disablebold))
   (set-face-foreground 'default "#000000")
   (set-face-background 'default "#FFFFFF")
-  )
+  ; Show White Spaces.
+  (setq  whitespace-style  '(face  tabs))
+  (set-face-foreground  'whitespace-tab  nil)
+  (set-face-background  'whitespace-tab  "green")
+  (global-whitespace-mode  1)
+)
 
 (defun mycs-setup-color-background-dark ()
   (mycs-setup-color-bgdark-enablebold)
   (set-face-foreground 'default "white")
   (set-face-background 'default "black")
-  )
+  ; Show White Spaces.
+  (setq  whitespace-style  '(face  tabs))
+  (set-face-foreground  'whitespace-tab  nil)
+  (set-face-background  'whitespace-tab  "green")
+  (global-whitespace-mode  1)
+)
 
 ;;====================================================================;;
 ;;                                                                    ;;
