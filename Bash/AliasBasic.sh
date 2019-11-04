@@ -32,6 +32,11 @@ alias  ls='ls --color=tty'
 alias  rm='rm -i'
 alias  view='vim -R '
 
+alias  gitlogdate='sed -n -e "s/^Date: *//p"'
+alias  gitlogauth='sed -n -e "s/^Author: *//p"'
+alias  gitlastdate='git show | gitlogdate'
+alias  gitlastauth='git show | gitlogauth'
+
 if [ "x${MYBASH_ECHO_LOADING_BASHRC_DETAIL}y" = "xTRUEy" ] ; then
   echo  "Loading  ${HOME}/Settings/Bash/AliasBasic.sh : OK"  1>&2
 fi
