@@ -37,3 +37,27 @@ function  add_path_to_var() {
         fi
     fi
 }
+
+
+##################################################################
+##
+##
+###
+
+function  git_rebase_amend() {
+    logAuth=$(git show | gitlogauth)
+    logDate=$(git show | gitlogdate)
+    cmdEnvs="env  GIT_COMMITTER_DATE='${logDate}'"
+    command="${cmdEnvs}  git commit --amend -e  $1"
+    echo  "${command}"
+    eval  "${command}"
+}
+
+function  git_rebase_empty() {
+    logAuth=$(git show | gitlogauth)
+    logDate=$(git show | gitlogdate)
+    cmdEnvs="env  GIT_COMMITTER_DATE='${logDate}'"
+    command="${cmdEnvs}  git commit --allow-empty  $1"
+    echo  "${command}"
+    eval  "${command}"
+}
