@@ -8,3 +8,6 @@ export  HISTTIMEFORMAT='%Y%m%d %T '
 test  -t 0  &&  stty    eof  ^P
 export  IGNOREEOF=2
 
+GPG_TTY=$(tty)
+export  GPG_TTY
+
