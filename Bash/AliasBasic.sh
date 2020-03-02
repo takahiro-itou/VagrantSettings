@@ -37,6 +37,9 @@ alias  gitlogauth='sed -n -e "s/^Author: *//p"'
 alias  gitlastdate='git show | gitlogdate'
 alias  gitlastauth='git show | gitlogauth'
 
+alias  git_chmod_755='git  update-index  --chmod=+x '
+alias  git_chmod_644='git  update-index  --chmod=-x '
+
 if [ "x${MYBASH_ECHO_LOADING_BASHRC_DETAIL}y" = "xTRUEy" ] ; then
   echo  "Loading  ${HOME}/Settings/Bash/AliasBasic.sh : OK"  1>&2
 fi
