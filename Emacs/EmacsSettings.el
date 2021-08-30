@@ -3,10 +3,21 @@
 ;;                                                                        ;;
 ;;      EmacsSettings.el                                                  ;;
 ;;                                                                        ;;
-;;      Copyright (C) 2006-2014, Takahiro Itou.                           ;;
+;;      Copyright (C) 2006-2021, Takahiro Itou.                           ;;
 ;;      All Rights Reserved.                                              ;;
 ;;                                                                        ;;
 ;;========================================================================;;
+
+;;====================================================================;;
+;;                                                                    ;;
+;;    Install Packages.                                               ;;
+;;                                                                    ;;
+;;====================================================================;;
+
+(if (and  (boundp  'myes-load-install-packages)
+          myes-load-install-packages)
+    (load  "InstallPackage"))
+(package-initialize)
 
 ;;====================================================================;;
 ;;                                                                    ;;
@@ -115,4 +126,3 @@
     (load  "DebuggerSettings"))
 
 (setq  vc-handled-backends nil)
-
