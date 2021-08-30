@@ -61,3 +61,17 @@ function  git_rebase_empty() {
     echo  "${command}"
     eval  "${command}"
 }
+
+function  wghg() {
+    logDate=$(git show | sed -n -e 's/^Date: *//p')
+    logMesg=$(git log  --max-count=1 --pretty=format:%B)
+    echo  "Date: ${logDate}"  1>&2
+    echo  "Mesg: ${logMesg}"  1>&2
+    if [[ $# -ge 1 ]] ; then
+        theCmd=$1
+        shift  1
+    else
+        theCmd='commit -e'
+    fi
+    hg  ${theCmd}  --date "${logDate}" -m "${logMesg}"  "$@"
+}
