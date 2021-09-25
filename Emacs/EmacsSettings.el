@@ -51,8 +51,9 @@
 
 (custom-set-variables
   '(c-basic-offset  4)
+  '(c-auto-newline            nil)
   '(c-syntactic-indentation   t)
-  '(c-tab-always-indent       t)
+  '(c-tab-always-indent       nil)
   '(column-number-mode        t)
   '(electric-indent-mode      t)
   '(fill-column               80)
