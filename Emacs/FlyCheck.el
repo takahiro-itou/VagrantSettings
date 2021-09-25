@@ -7,7 +7,7 @@
 
 ;;  flycheck
 
-(load  "InstallPackages")
+;(load  "InstallPackages")
 (use-package
     flycheck
     :ensure  t

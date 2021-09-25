@@ -52,9 +52,9 @@
 (custom-set-variables
   '(c-basic-offset  4)
   '(c-syntactic-indentation   t)
-  '(c-tab-always-indent       nil)
+  '(c-tab-always-indent       t)
   '(column-number-mode        t)
-  '(electric-indent-mode      nil)
+  '(electric-indent-mode      t)
   '(fill-column               80)
   '(global-font-lock-mode t   nil  (font-lock))
   '(indent-tabs-mode          nil)
