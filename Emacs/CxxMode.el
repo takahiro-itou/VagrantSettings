@@ -168,6 +168,15 @@
   (mycxx-setup-offset-settings)
 )
 
-(add-hook  'c++-mode-hook   'mycxx-cplusplus-mode-setup)
-(add-hook  'c-mode-hook     'mycxx-cplusplus-mode-setup)
-(add-hook  'java-mode-hook  'mycxx-cplusplus-mode-setup)
+(defun  mycxx-noelectric-mode-setup ()
+  (setq  tab-width  4)
+  (setq  electric-indent-mode   nil)
+  (setq  c-auto-newline         nil)
+  (setq  c-tab-always-indent    nil)
+)
+
+(add-hook  'c++-mode-hook       'mycxx-cplusplus-mode-setup)
+(add-hook  'c-mode-hook         'mycxx-cplusplus-mode-setup)
+(add-hook  'java-mode-hook      'mycxx-cplusplus-mode-setup)
+(add-hook  'asm-mode-hook       'mycxx-noelectric-mode-setup)
+(add-hook  'python-mode-hook    'mycxx-noelectric-mode-setup)
