@@ -3,10 +3,21 @@
 ;;                                                                        ;;
 ;;      EmacsSettings.el                                                  ;;
 ;;                                                                        ;;
-;;      Copyright (C) 2006-2014, Takahiro Itou.                           ;;
+;;      Copyright (C) 2006-2021, Takahiro Itou.                           ;;
 ;;      All Rights Reserved.                                              ;;
 ;;                                                                        ;;
 ;;========================================================================;;
+
+;;====================================================================;;
+;;                                                                    ;;
+;;    Install Packages.                                               ;;
+;;                                                                    ;;
+;;====================================================================;;
+
+(if (and  (boundp  'myes-load-install-packages)
+          myes-load-install-packages)
+    (load  "InstallPackage"))
+(package-initialize)
 
 ;;====================================================================;;
 ;;                                                                    ;;
@@ -40,10 +51,11 @@
 
 (custom-set-variables
   '(c-basic-offset  4)
+  '(c-auto-newline            nil)
   '(c-syntactic-indentation   t)
   '(c-tab-always-indent       nil)
   '(column-number-mode        t)
-  '(electric-indent-mode      nil)
+  '(electric-indent-mode      t)
   '(fill-column               80)
   '(global-font-lock-mode t   nil  (font-lock))
   '(indent-tabs-mode          nil)
@@ -115,4 +127,3 @@
     (load  "DebuggerSettings"))
 
 (setq  vc-handled-backends nil)
-

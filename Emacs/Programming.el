@@ -3,7 +3,7 @@
 ;;                                                                        ;;
 ;;      Programming.el                                                    ;;
 ;;                                                                        ;;
-;;      Copyright (C) 2006-2014, Takahiro Itou.                           ;;
+;;      Copyright (C) 2006-2021, Takahiro Itou.                           ;;
 ;;      All Rights Reserved.                                              ;;
 ;;                                                                        ;;
 ;;========================================================================;;
@@ -22,3 +22,13 @@
 (add-to-list
  'auto-mode-alist
  '("\\(\\.h\\|\\.h\\.in\\)\\'" . c++-mode))
+
+;;====================================================================;;
+;;                                                                    ;;
+;;    FlyCheck.                                                       ;;
+;;                                                                    ;;
+;;====================================================================;;
+
+(if (and  (boundp  'myes-enable-flycheck)
+          myes-enable-flycheck)
+    (load  "FlyCheck"))
