@@ -1,0 +1,4 @@
+
+source-file  ~/Settings/TMux/Terminal.rc
+source-file  ~/Settings/TMux/KeyBind.rc
+source-file  ~/Settings/TMux/Caption.rc

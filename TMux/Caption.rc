@@ -1,0 +1,38 @@
+
+
+##################################################################
+##
+##    全般
+##
+
+# ステータスバーの色
+
+set-option -g status-bg "colour7"
+set-option -g status-fg "colour4"
+
+##################################################################
+##
+##    左ステータスバー
+##
+
+
+##################################################################
+##
+##    右ステータスバー
+##
+
+# スタイル
+set-option -g status-right-fg 'colour12'
+set-option -g status-right-style 'bold'
+
+# ペインの名前と日時を表示
+set-option -g status-right " \"#{=21:pane_title}\" %Y/%m/%d(%a) %H:%M:%S"
+
+##################################################################
+##
+##    ウィンドウステータス
+##
+
+set-window-option -g window-status-current-format   \
+    '#[bg=colour15,fg=colour9,bold] #I #W'
+set-window-option -g window-status-format '#[fg=colour4] #I #W'
