@@ -1,0 +1,10 @@
+
+# 左ステータスバー
+
+# 右ステータスバー
+
+set-option -g status-right " \"#{=21:pane_title}\" %Y/%m/%d(%a) %H:%M:%S"
+
+# ステータスバーの色
+set-option -g status-bg "colour7"
+set-option -g status-fg "colour4"
