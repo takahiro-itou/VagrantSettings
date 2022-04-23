@@ -3,3 +3,6 @@
 set -g prefix C-a
 unbind-key C-b
 bind-key C-a send-prefix
+
+# コピーモードでのキーバインドを vi スタイルにする
+set-window-option -g mode-keys vi
