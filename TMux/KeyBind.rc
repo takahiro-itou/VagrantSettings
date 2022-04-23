@@ -2,3 +2,4 @@
 # プレフィックスキーを screen と同じ C-a  に変更
 set -g prefix C-a
 unbind-key C-b
+bind-key C-a send-prefix
