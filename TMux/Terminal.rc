@@ -10,3 +10,6 @@ set -g terminal-overrides 'xterm:colors=256'
 
 # マウス操作を有効にする
 set-option -g mouse on
+
+# エスケープキーの効きをよくする
+set-option -s escape-time 0
