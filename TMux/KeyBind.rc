@@ -27,11 +27,14 @@ bind-key            Escape    copy-mode
 
 # だいたい screen で使っていたのと同じにする
 
-# Ctl-a l       ウィンドウリストを表示
+# Ctl-a l       ウィンドウリストを表示 (現在のセッションのみ)
+# Ctl-a L       ウィンドウリストを表示
 # Ctl-Left      前 (左) のウィンドウ (タブ) へ移動
 # Ctl-Right     後 (右) のウィンドウ (タブ) へ移動
 
-bind-key            l         choose-tree -w
+bind-key            L         choose-tree -N -w
+bind-key            l         run-shell     \
+    'tmux choose-tree -Nw -f "##{==:##{session_name},#{session_name}}"'
 bind-key  -T root   C-Left    previous-window
 bind-key  -T root   C-Right   next-window
 
