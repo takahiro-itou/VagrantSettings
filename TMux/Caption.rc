@@ -22,8 +22,8 @@ set-option -g status-fg "colour4"
 ##
 
 # スタイル
-set-option -g status-right-fg 'colour12'
-set-option -g status-right-style 'bold'
+#set-option -g status-right-fg 'colour12'
+set-option -g status-right-style 'fg=colour12,bold'
 
 # ペインの名前と日時を表示
 set-option -g status-right " \"#{=21:pane_title}\" %Y/%m/%d(%a) %H:%M:%S"

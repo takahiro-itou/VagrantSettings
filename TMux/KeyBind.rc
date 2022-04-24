@@ -4,7 +4,7 @@
 ##    プレフィックスキー
 ##
 
-# プレフィックスキーを screen と同じ C-a  に変更
+# プレフィックスキーを screen と同じ Ctl-a  に変更
 set -g prefix C-a
 unbind-key C-b
 bind-key C-a send-prefix
@@ -17,6 +17,9 @@ bind-key C-a send-prefix
 # コピーモードでのキーバインドを vi スタイルにする
 set-window-option -g mode-keys vi
 
+# Ctl-a Esc でコピーモードに入る
+bind-key            Escape    copy-mode
+
 ##################################################################
 ##
 ##    ウィンドウ切り替え操作
@@ -24,10 +27,13 @@ set-window-option -g mode-keys vi
 
 # だいたい screen で使っていたのと同じにする
 
-# C-a l     ウィンドウリスト
+# Ctl-a l       ウィンドウリストを表示
+# Ctl-Left      前 (左) のウィンドウ (タブ) へ移動
+# Ctl-Right     後 (右) のウィンドウ (タブ) へ移動
 
 bind-key            l         choose-tree -w
 bind-key  -T root   C-Left    previous-window
 bind-key  -T root   C-Right   next-window
 
+# Ctl-a Shif-A  ウィンドウ (タブ) の名前を変える
 bind-key            A         command-prompt -I "#W" "rename-window '%%'"
