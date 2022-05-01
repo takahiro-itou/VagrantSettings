@@ -35,7 +35,7 @@ set-option -g status-right-style 'fg=colour12,bold'
 set-option -g status-right-length 60
 
 # ペインの名前と日時を表示
-set-option -g status-right  '[#{=21:pane_title}] %Y/%m/%d(%a) %H:%M:%S'
+set-option -g status-right '%Y/%m/%d(%a) %H:%M:%S'
 
 ##################################################################
 ##
@@ -53,5 +53,5 @@ set-window-option -g window-status-format '#[fg=colour4] #I #W'
 
 set-option -g pane-border-status bottom
 set-option -g pane-border-format  \
-"#[bg=colour7,fg=colour0]  [#S] #I #W \
-#(~/Settings/Tmux/Common/PaneBorder.sh '#{pane_current_path}')"
+"#[bg=colour7,fg=colour0]  [#{=21:pane_title}]:[#S] \
+#(~/Settings/Tmux/Common/PaneBorder.sh '#{pane_current_path}' #{pane_width})"

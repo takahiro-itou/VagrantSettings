@@ -8,7 +8,7 @@ if [ $1 = 'off' ] ; then
 else
     tmux set-option    mouse on
     tmux set-option    status-right  \
-         '[#{=21:pane_title}] %Y/%m/%d(%a) %H:%M:%S'
+         '[Mouse ON] %Y/%m/%d(%a) %H:%M:%S'
     tmux display-message 'Mouse Enabled'
 fi
 
