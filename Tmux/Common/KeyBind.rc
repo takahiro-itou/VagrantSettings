@@ -52,3 +52,13 @@ bind-key  -T root   C-Right   next-window
 
 # Ctl-a Shif-A  ウィンドウ (タブ) の名前を変える
 bind-key            A         command-prompt -I "#W" "rename-window '%%'"
+
+##################################################################
+##
+##    マウスモード
+##
+
+bind-key            m   \
+if-shell 'tmux show-options    mouse | grep -q off'    \
+"run-shell '/bin/bash ~/Settings/Tmux/Common/Mouse.sh on'"     \
+"run-shell '/bin/bash ~/Settings/Tmux/Common/Mouse.sh off'"
