@@ -20,6 +20,18 @@ set-window-option -g mode-keys vi
 # Ctl-a Esc でコピーモードに入る
 bind-key            Escape    copy-mode
 
+# マウスドラッグ完了時にコピーモードを自動で抜けない
+# ドラッグは範囲選択のみ
+# その後 y, C-w, Esc-w のいずれかを押すとコピーする
+# または Enter  を押すとコピー後に、コピーモードを抜ける
+
+unbind -T copy-mode-vi  MouseDragEnd1Pane
+bind-key  -T copy-mode-vi   y       send-keys -X copy-pipe "tmux copy-buffer"
+bind-key  -T copy-mode-vi   C-w     send-keys -X copy-pipe "tmux copy-buffer"
+bind-key  -T copy-mode-vi   M-w     send-keys -X copy-pipe "tmux copy-buffer"
+
+bind-key  -T copy-mode-vi   Enter   send-keys -X copy-selection-and-cancel
+
 ##################################################################
 ##
 ##    ウィンドウ切り替え操作
