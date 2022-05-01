@@ -15,6 +15,8 @@ set-option -g status-fg "colour4"
 ##    左ステータスバー
 ##
 
+set-option -g status-left-length  16
+
 set-option -g status-left   \
 '#[bg=colour7,fg=colour=4]\
 #{?client_prefix,#[bg=colour2][C-a],}\
@@ -28,6 +30,9 @@ set-option -g status-left   \
 # スタイル
 #set-option -g status-right-fg 'colour12'
 set-option -g status-right-style 'fg=colour12,bold'
+
+# 最大長
+set-option -g status-right-length 60
 
 # ペインの名前と日時を表示
 set-option -g status-right  '[#{=21:pane_title}] %Y/%m/%d(%a) %H:%M:%S'
