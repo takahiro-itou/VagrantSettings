@@ -1,0 +1,21 @@
+
+##################################################################
+##
+##    共通設定の前にバージョン判定だけ先に行う
+##
+
+run-shell "tmux setenv -g TMUX_VERSION $(tmux -V | cut -d' ' -f2)"
+
+##################################################################
+##
+##    共通設定
+##
+
+source-file  ~/Settings/Tmux/Common/Terminal.rc
+source-file  ~/Settings/Tmux/Common/KeyBind.rc
+source-file  ~/Settings/Tmux/Common/Caption.rc
+
+##################################################################
+##
+##    バージョン設定
+##
