@@ -4,8 +4,9 @@ target_dir=$1
 pane_width=$2
 
 if git_status=$(cd ${target_dir} && git status 2> /dev/null ); then
-    git_branch=$(git branch --no-color 2> /dev/null | \
-                     sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
+    git_branch=$(cd ${target_dir}                       \
+            && git branch --no-color 2> /dev/null       \
+            |  sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
     git_info="git[${git_branch}]"
 else
     git_info=''
