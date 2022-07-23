@@ -3,7 +3,7 @@
 ;;                                                                        ;;
 ;;      EmacsSettings.el                                                  ;;
 ;;                                                                        ;;
-;;      Copyright (C) 2006-2021, Takahiro Itou.                           ;;
+;;      Copyright (C) 2006-2022, Takahiro Itou.                           ;;
 ;;      All Rights Reserved.                                              ;;
 ;;                                                                        ;;
 ;;========================================================================;;
@@ -110,6 +110,8 @@
 (if (and  (boundp  'myes-load-window-settings)
           myes-load-window-settings)
     (load  "WindowSettings"))
+
+(load  "ModeLine")
 
 ;;====================================================================;;
 ;;                                                                    ;;
