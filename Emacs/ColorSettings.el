@@ -3,11 +3,12 @@
 ;;                                                                        ;;
 ;;      ColorSettings.el                                                  ;;
 ;;                                                                        ;;
-;;      Copyright (C) 2006-2014, Takahiro Itou.                           ;;
+;;      Copyright (C) 2006-2022, Takahiro Itou.                           ;;
 ;;      All Rights Reserved.                                              ;;
 ;;                                                                        ;;
 ;;========================================================================;;
 
+(require  'cl)
 (require  'whitespace)
 
 ;;====================================================================;;
@@ -90,6 +91,19 @@
 
 ;;====================================================================;;
 ;;                                                                    ;;
+;;    White Space Settings                                            ;;
+;;                                                                    ;;
+;;====================================================================;;
+
+(defun mycs-setup-whitespaces ()
+  (setq  whitespace-style  '(face  tabs))
+  (set-face-foreground  'whitespace-tab  nil)
+  (set-face-background  'whitespace-tab  "green")
+  (global-whitespace-mode  1)
+)
+
+;;====================================================================;;
+;;                                                                    ;;
 ;;    Face Color Settings.                                            ;;
 ;;                                                                    ;;
 ;;====================================================================;;
@@ -101,10 +115,7 @@
   (set-face-foreground 'default "#000000")
   (set-face-background 'default "#FFFFFF")
   ; Show White Spaces.
-  (setq  whitespace-style  '(face  tabs))
-  (set-face-foreground  'whitespace-tab  nil)
-  (set-face-background  'whitespace-tab  "green")
-  (global-whitespace-mode  1)
+  (mycs-setup-whitespaces)
 )
 
 (defun mycs-setup-color-background-dark ()
@@ -112,10 +123,7 @@
   (set-face-foreground 'default "white")
   (set-face-background 'default "black")
   ; Show White Spaces.
-  (setq  whitespace-style  '(face  tabs))
-  (set-face-foreground  'whitespace-tab  nil)
-  (set-face-background  'whitespace-tab  "green")
-  (global-whitespace-mode  1)
+  (mycs-setup-whitespaces)
 )
 
 ;;====================================================================;;
