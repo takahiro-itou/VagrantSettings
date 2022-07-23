@@ -13,6 +13,14 @@
 
 ;;====================================================================;;
 ;;                                                                    ;;
+;;    Default Settings.                                               ;;
+;;                                                                    ;;
+;;====================================================================;;
+
+(defvar  mycs-eol-crlf  nil)
+
+;;====================================================================;;
+;;                                                                    ;;
 ;;    Back Ground is Light Color.                                     ;;
 ;;    Bold is Enabled.                                                ;;
 ;;                                                                    ;;
@@ -95,10 +103,31 @@
 ;;                                                                    ;;
 ;;====================================================================;;
 
-(defun mycs-setup-whitespaces ()
-  (setq  whitespace-style  '(face  tabs))
-  (set-face-foreground  'whitespace-tab  nil)
-  (set-face-background  'whitespace-tab  "green")
+(defun mycs-whitespace-display-mappings (eol-crlf)
+  (if eol-crlf
+    '(
+      (space-mark   ?\u3000 [?\u25a1])
+      (newline-mark ?\n     [?\u21B5 ?\n])
+     )
+    '(
+      (space-mark   ?\u3000 [?\u25a1])
+      (newline-mark ?\n     [?\u2193 ?\n])
+     )
+))
+
+(defun mycs-setup-whitespaces (eol-crlf)
+  (setq  whitespace-style
+    '(face tabs spaces space-mark newline newline-mark)
+    )
+  (set-face-foreground  'whitespace-newline     "purple")
+  (set-face-background  'whitespace-newline     nil)
+  (set-face-foreground  'whitespace-space       "purple")
+  (set-face-background  'whitespace-space       nil)
+  (set-face-foreground  'whitespace-tab         nil)
+  (set-face-background  'whitespace-tab         "green")
+  (setq whitespace-display-mappings
+    (mycs-whitespace-display-mappings eol-crlf))
+  (setq whitespace-space-regexp "\\([\u0020\u3000\u000d\r]+\\)")
   (global-whitespace-mode  1)
 )
 
@@ -115,7 +144,7 @@
   (set-face-foreground 'default "#000000")
   (set-face-background 'default "#FFFFFF")
   ; Show White Spaces.
-  (mycs-setup-whitespaces)
+  (mycs-setup-whitespaces mycs-eol-crlf)
 )
 
 (defun mycs-setup-color-background-dark ()
@@ -123,7 +152,7 @@
   (set-face-foreground 'default "white")
   (set-face-background 'default "black")
   ; Show White Spaces.
-  (mycs-setup-whitespaces)
+  (mycs-setup-whitespaces mycs-eol-crlf)
 )
 
 ;;====================================================================;;
