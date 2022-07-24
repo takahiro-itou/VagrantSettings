@@ -17,7 +17,8 @@
 ;;                                                                    ;;
 ;;====================================================================;;
 
-(defvar  mycs-eol-crlf  nil)
+(defvar  mycs-display-flag-newline  t)
+(defvar  mycs-eol-crlf              nil)
 
 ;;====================================================================;;
 ;;                                                                    ;;
@@ -115,6 +116,23 @@
      )
 ))
 
+(defun mycs-enable-displaying-newline ()
+  (let* ((code buffer-file-coding-system)
+         (eol (coding-system-eol-type code))
+         (eol-crlf (cond ((eq eol 0) nil) (t t))
+         )
+     )
+    ; (message "code:%s EOL:%s CRLF:%s" code eol eol-crlf)
+    (setq whitespace-display-mappings
+      (mycs-whitespace-display-mappings eol-crlf))
+    (whitespace-display-char-on)
+))
+
+(defun mycs-toggle-display-newline ()
+  (setq  mycs-display-flag-newline  (not mycs-display-flag-newline))
+  (mycs-enable-displaying-newline)
+)
+
 (defun mycs-setup-whitespaces (eol-crlf)
   (setq  whitespace-style
     '(face tabs spaces space-mark newline newline-mark)
@@ -125,11 +143,12 @@
   (set-face-background  'whitespace-space       nil)
   (set-face-foreground  'whitespace-tab         nil)
   (set-face-background  'whitespace-tab         "green")
-  (setq whitespace-display-mappings
-    (mycs-whitespace-display-mappings eol-crlf))
+  (mycs-enable-displaying-newline)
   (setq whitespace-space-regexp "\\([\u0020\u3000\u000d\r]+\\)")
   (global-whitespace-mode  1)
 )
+
+(add-hook  'find-file-hooks  'mycs-enable-displaying-newline)
 
 ;;====================================================================;;
 ;;                                                                    ;;
