@@ -105,26 +105,36 @@
 ;;====================================================================;;
 
 (defun mycs-whitespace-display-mappings (eol-crlf)
-  (if eol-crlf
+  (cond
+   ( (eq eol-crlf 0)
+     '(
+       (space-mark   ?\u3000 [?\u25a1])
+       (newline-mark ?\n     [?\u2193 ?\n])
+      ) )
+   ( (eq eol-crlf 1)
     '(
       (space-mark   ?\u3000 [?\u25a1])
       (newline-mark ?\n     [?\u21B5 ?\n])
-     )
+     ) )
+   ( (eq eol-crlf 2)
     '(
       (space-mark   ?\u3000 [?\u25a1])
-      (newline-mark ?\n     [?\u2193 ?\n])
-     )
+      (newline-mark ?\n     [?\u2190 ?\n])
+     ) )
+   ( t
+    '(
+      (space-mark   ?\u3000 [?\u25a1])
+      (newline-mark ?\n     [?\n])
+     ) )
 ))
 
 (defun mycs-enable-displaying-newline ()
   (let* ((code buffer-file-coding-system)
          (eol (coding-system-eol-type code))
-         (eol-crlf (cond ((eq eol 0) nil) (t t))
-         )
      )
     ; (message "code:%s EOL:%s CRLF:%s" code eol eol-crlf)
     (setq whitespace-display-mappings
-      (mycs-whitespace-display-mappings eol-crlf))
+      (mycs-whitespace-display-mappings eol))
     (whitespace-display-char-on)
 ))
 
