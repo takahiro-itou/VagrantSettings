@@ -3,12 +3,22 @@
 ;;                                                                        ;;
 ;;      ColorSettings.el                                                  ;;
 ;;                                                                        ;;
-;;      Copyright (C) 2006-2014, Takahiro Itou.                           ;;
+;;      Copyright (C) 2006-2022, Takahiro Itou.                           ;;
 ;;      All Rights Reserved.                                              ;;
 ;;                                                                        ;;
 ;;========================================================================;;
 
+(require  'cl)
 (require  'whitespace)
+
+;;====================================================================;;
+;;                                                                    ;;
+;;    Default Settings.                                               ;;
+;;                                                                    ;;
+;;====================================================================;;
+
+(defvar  mycs-display-flag-newline  t)
+(defvar  mycs-eol-crlf              nil)
 
 ;;====================================================================;;
 ;;                                                                    ;;
@@ -90,6 +100,68 @@
 
 ;;====================================================================;;
 ;;                                                                    ;;
+;;    White Space Settings                                            ;;
+;;                                                                    ;;
+;;====================================================================;;
+
+(defun mycs-whitespace-display-mappings (eol-crlf)
+  (cond
+   ( (eq eol-crlf 0)
+     '(
+       (space-mark   ?\u3000 [?\u25a1])
+       (newline-mark ?\n     [?\u2193 ?\n])
+      ) )
+   ( (eq eol-crlf 1)
+    '(
+      (space-mark   ?\u3000 [?\u25a1])
+      (newline-mark ?\n     [?\u21B5 ?\n])
+     ) )
+   ( (eq eol-crlf 2)
+    '(
+      (space-mark   ?\u3000 [?\u25a1])
+      (newline-mark ?\n     [?\u2190 ?\n])
+     ) )
+   ( t
+    '(
+      (space-mark   ?\u3000 [?\u25a1])
+      (newline-mark ?\n     [?\n])
+     ) )
+))
+
+(defun mycs-enable-displaying-newline ()
+  (let* ((code buffer-file-coding-system)
+         (eol (coding-system-eol-type code))
+     )
+    ; (message "code:%s EOL:%s CRLF:%s" code eol eol-crlf)
+    (setq whitespace-display-mappings
+      (mycs-whitespace-display-mappings eol))
+    (whitespace-display-char-on)
+))
+
+(defun mycs-toggle-display-newline ()
+  (setq  mycs-display-flag-newline  (not mycs-display-flag-newline))
+  (mycs-enable-displaying-newline)
+)
+
+(defun mycs-setup-whitespaces (eol-crlf)
+  (setq  whitespace-style
+    '(face tabs spaces space-mark newline newline-mark)
+    )
+  (set-face-foreground  'whitespace-newline     "purple")
+  (set-face-background  'whitespace-newline     nil)
+  (set-face-foreground  'whitespace-space       "purple")
+  (set-face-background  'whitespace-space       nil)
+  (set-face-foreground  'whitespace-tab         nil)
+  (set-face-background  'whitespace-tab         "green")
+  (mycs-enable-displaying-newline)
+  (setq whitespace-space-regexp "\\([\u0020\u3000\u000d\r]+\\)")
+  (global-whitespace-mode  1)
+)
+
+(add-hook  'find-file-hooks  'mycs-enable-displaying-newline)
+
+;;====================================================================;;
+;;                                                                    ;;
 ;;    Face Color Settings.                                            ;;
 ;;                                                                    ;;
 ;;====================================================================;;
@@ -101,10 +173,7 @@
   (set-face-foreground 'default "#000000")
   (set-face-background 'default "#FFFFFF")
   ; Show White Spaces.
-  (setq  whitespace-style  '(face  tabs))
-  (set-face-foreground  'whitespace-tab  nil)
-  (set-face-background  'whitespace-tab  "green")
-  (global-whitespace-mode  1)
+  (mycs-setup-whitespaces mycs-eol-crlf)
 )
 
 (defun mycs-setup-color-background-dark ()
@@ -112,10 +181,7 @@
   (set-face-foreground 'default "white")
   (set-face-background 'default "black")
   ; Show White Spaces.
-  (setq  whitespace-style  '(face  tabs))
-  (set-face-foreground  'whitespace-tab  nil)
-  (set-face-background  'whitespace-tab  "green")
-  (global-whitespace-mode  1)
+  (mycs-setup-whitespaces mycs-eol-crlf)
 )
 
 ;;====================================================================;;
