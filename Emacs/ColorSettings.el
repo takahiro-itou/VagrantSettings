@@ -158,6 +158,18 @@
   (global-whitespace-mode  1)
 )
 
+(defun mycs-setup-whitespaces-only-tabs (eol-crlf)
+  (setq  whitespace-style
+    '(face tabs)
+    )
+  (set-face-foreground  'whitespace-newline     "purple")
+  (set-face-background  'whitespace-newline     nil)
+  (set-face-foreground  'whitespace-tab         nil)
+  (set-face-background  'whitespace-tab         "green")
+  (mycs-enable-displaying-newline)
+  (global-whitespace-mode  1)
+)
+
 (add-hook  'find-file-hooks  'mycs-enable-displaying-newline)
 
 ;;====================================================================;;
@@ -173,7 +185,7 @@
   (set-face-foreground 'default "#000000")
   (set-face-background 'default "#FFFFFF")
   ; Show White Spaces.
-  (mycs-setup-whitespaces mycs-eol-crlf)
+  (mycs-setup-whitespaces-only-tabs mycs-eol-crlf)
 )
 
 (defun mycs-setup-color-background-dark ()
