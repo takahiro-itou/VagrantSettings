@@ -3,19 +3,19 @@
 ;;                                                                        ;;
 ;;      KeyBind.el                                                        ;;
 ;;                                                                        ;;
-;;      Copyright (C) 2006-2014, Takahiro Itou.                           ;;
+;;      Copyright (C) 2006-2022, Takahiro Itou.                           ;;
 ;;      All Rights Reserved.                                              ;;
 ;;                                                                        ;;
 ;;========================================================================;;
 
 (cond
- ;;	Emacs on Cygwin.
+ ;; Emacs on Cygwin.
  ( (or (equal my-settings-editor "cygwin-emacs")
        (equal my-settings-editor "cygwin-xemacs")
    )
    (setq  keyname-End           [select])
    )
- ;;	Other.
+ ;; Other.
  ( t
    (setq  keyname-End           [End])
    )
@@ -115,10 +115,27 @@
   (interactive)
   (kill-this-buffer)
   (delete-window)
-  )
+)
+
+(defun  mykb-set-buffer-file-coding-system ()
+  (interactive)
+  (set-buffer-file-coding-system 'utf-8-with-signature-unix)
+)
+
+(defun  mykb-unify-buffer-codings ()
+  (interactive)
+  (set-buffer-file-coding-system 'utf-8-with-signature-unix)
+  (mark-whole-buffer)
+  (delete-trailing-whitespace)
+  ; (keyboard-quit)
+)
 
 (global-set-key  "\C-x\C-d"     'kill-this-buffer)
 (global-set-key  "\C-xd"        'mykb-kill-current-buffer-and-window)
 (global-set-key  keyname-F12    'set-mark-command)
 (global-set-key  "\M-;"         'comment-region)
 (global-set-key  "\C-x\M-;"     'uncomment-region)
+
+(global-set-key  keyname-F2     'set-buffer-file-coding-system)
+(global-set-key  keyname-S-F2   'mykb-set-buffer-file-coding-system)
+(global-set-key  keyname-C-F2   'mykb-unify-buffer-codings)
