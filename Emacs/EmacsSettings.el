@@ -55,7 +55,7 @@
   '(c-syntactic-indentation   t)
   '(c-tab-always-indent       nil)
   '(column-number-mode        t)
-  '(electric-indent-mode      t)
+  '(electric-indent-mode      nil)
   '(fill-column               80)
   '(global-font-lock-mode t   nil  (font-lock))
   '(indent-tabs-mode          nil)
