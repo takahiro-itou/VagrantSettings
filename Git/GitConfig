@@ -20,3 +20,6 @@
     phd   =  push  github  develop
     phm   =  push  github  master
 
+[include]
+    path  =  ~/LocalSettings/Git/LocalConfig
+

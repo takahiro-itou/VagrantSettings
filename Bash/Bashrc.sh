@@ -9,7 +9,7 @@ for  file  in  /etc/bashrc  ; do
   fi
 done
 
-for  file  in  SetEnvs.sh  Prompt.sh  BashAlias.sh  ; do
+for  file  in  Function.sh  SetEnvs.sh  Prompt.sh  BashAlias.sh  ; do
   if [ -f ~/Settings/Bash/${file} ] ; then
     source  ~/Settings/Bash/${file}
   fi
