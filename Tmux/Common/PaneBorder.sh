@@ -27,6 +27,6 @@ dir_name_len=${#target_dir}
 dir_name=$(printf  "%-*s"  ${dir_name_max} "${target_dir}")
 dir_info=${dir_name: -${dir_name_max}}
 
-pane_status+="#[bg=colour2,fg=colour15]${dir_info}#[default]"
+pane_status+="#[bg=colour14,fg=colour0]${dir_info}#[default]"
 
 echo "${pane_status}"
